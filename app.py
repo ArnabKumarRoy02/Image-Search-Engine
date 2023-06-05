@@ -10,18 +10,16 @@ from sklearn.manifold import TSNE
 from sklearn.decomposition import PCA
 from sklearn.neighbors import NearestNeighbors
 import tensorflow as tf
+from tensorflow.keras.saving import load_model
 
 app = Flask(__name__)
 
 # Load pre-trained model and data
-with open('data/model-finetuned.h5', 'rb') as f:
-    model = pickle.load(f)
+model = load_model('data/model-finetuned.h5')
 
-with open('data/features-caltech101-resnet.pickle', 'rb') as f:
-    dataset_features = pickle.load(f)
+dataset_features = pickle.load('data/features-caltech101-resnet.pickle')
 
-with open('data/filenames-caltech101.pickle', 'rb') as f:
-    dataset_filenames = pickle.load(f)
+dataset_filenames = pickle.load('data/filenames-caltech101.pickle')
 
 # Define the route for the home page
 @app.route('/')
