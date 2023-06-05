@@ -1,0 +1,10 @@
+Pillow==8.4.0
+glob2==0.7
+time==1.0.0
+pickle==0.0.11
+random==1.0.1
+matplotlib==3.5.1
+numpy==1.22.0
+tqdm==4.62.3
+scikit-learn==1.0.2
+Flask==2.1.1
